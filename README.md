@@ -1,16 +1,20 @@
-# sumakerr_survey_app
+# Sumakerr Survery ❓
 
-A new Flutter project.
+## My Goal
 
-## Getting Started
+In this project, I want to build a survey application that asks users a series of questions to help them find the right home professionals. 
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## What you will create
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+I will create .....
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Finished App](https://github.com/londonappbrewery/Images/blob/master/quizzler-demo.gif)
+
+## What I have learned
+
+- Abstraction.
+
+
+
+>This is a companion project to The Sumakerr App. Check out the application at [www.msawo.com](https://www.msawo.com)
