@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import './widgets/survey.dart';
+import './widgets/home.dart';
 
 void main() => runApp(SumakerrSurveyApp());
 
@@ -15,7 +15,7 @@ class SumakerrSurveyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Sumakerr Survey',
-      home: Survey(),
+      home: HomePage(),
     );
   }
 }
