@@ -56,6 +56,7 @@ flutter:
           weight: 700
         - asset: fonts/NotoSans-BoldItalic.ttf
           style: italic
+          weight: 700
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
