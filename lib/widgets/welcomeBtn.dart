@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './surveyPage.dart';
+import '../screen/surveyPage.dart';
 import '../common.dart';
 
 class WelcomeBtn extends StatelessWidget {
@@ -10,6 +10,7 @@ class WelcomeBtn extends StatelessWidget {
       alignment: MainAxisAlignment.center,
       children: <Widget>[
         FlatButton(
+          padding: EdgeInsets.fromLTRB(20.0, 12.0, 20.0, 12.0),
           color: indigo,
           textColor: white,
           onPressed: () {
@@ -18,10 +19,10 @@ class WelcomeBtn extends StatelessWidget {
             ));
           },
           child: Text(
-            'Start',
+            'Start Now',
             style: TextStyle(
-              fontFamily: 'NotoSans-Bold',
-              fontSize: 15,
+              fontFamily: 'NotoSans',
+              fontSize: 18,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -33,9 +34,9 @@ class WelcomeBtn extends StatelessWidget {
             'Button pressed',
           ),
           child: Text(
-            'Learn more',
+            'Login',
             style: TextStyle(
-              fontFamily: 'NotoSans-BoldItalic',
+              fontFamily: 'NotoSans',
               fontSize: 15,
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.italic,

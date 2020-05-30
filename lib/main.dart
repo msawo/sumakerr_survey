@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import './widgets/home.dart';
+import './screen/homePage.dart';
 
 void main() => runApp(SumakerrSurveyApp());
 
