@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/userSelection.dart';
 import 'package:sumakerr_survey_app/common.dart';
 
 class SurveyPage extends StatelessWidget {
+  static const String _title = 'Project details:';
+
   final int _index = 0;
   final _surveyList = [
     {
-      'inputQuestion': 'Please select a project location:',
+      'surveyQuestion': 'Please select a project location:',
       'userPreference': [
         'Brusubi',
         'Kololi',
@@ -14,14 +17,14 @@ class SurveyPage extends StatelessWidget {
       ],
     },
     {
-      'inputQuestion': 'What service(s) are you looking for?',
+      'surveyQuestion': 'What service(s) are you looking for?',
       'userPreference': [
         'Design service',
         'Construction service',
       ],
     },
     {
-      'inputQuestion': 'How many rooms do you want in your new home?',
+      'surveyQuestion': 'How many rooms do you want in your new home?',
       'userPreference': [
         'One to two',
         'Three to four',
@@ -30,7 +33,7 @@ class SurveyPage extends StatelessWidget {
       ],
     },
     {
-      'inputQuestion': 'How many bedrooms would you like in your new house?',
+      'surveyQuestion': 'How many bedrooms would you like in your new house?',
       'userPreference': [
         'One',
         'Two',
@@ -40,7 +43,7 @@ class SurveyPage extends StatelessWidget {
       ],
     },
     {
-      'inputQuestion': 'How many bathrooms would you like in your new house?',
+      'surveyQuestion': 'How many bathrooms would you like in your new house?',
       'userPreference': [
         'One',
         'Two',
@@ -50,34 +53,34 @@ class SurveyPage extends StatelessWidget {
       ],
     },
     {
-      'inputQuestion':
+      'surveyQuestion':
           'Have you already purchased the land where the home will be built?',
       'userPreference': [
-        {'selection': 'I own a plot', 'score': 10},
-        {'selection': 'Currently looking', 'score': 1},
-        {'selection': 'Process of purchasing', 'score': 5},
+        'I own a plot',
+        'Currently looking',
+        'Process of purchasing',
       ],
     },
     {
-      'inputQuestion': 'What is your current status of this project?',
+      'surveyQuestion': 'What is your current status of this project?',
       'userPreference': [
-        {'selection': 'Exploring ideas', 'score': 2},
-        {'selection': 'Planning/budgeting', 'score': 5},
-        {'selection': 'Ready to hire', 'score': 7},
-        {'selection': 'In progress', 'score': 10},
+        'Exploring ideas',
+        'Planning/budgeting',
+        'Ready to hire',
+        'In progress',
       ],
     },
     {
-      'inputQuestion': 'When do you need to start the project?',
+      'surveyQuestion': 'When do you need to start the project?',
       'userPreference': [
-        {'selection': 'Within a week', 'score': 10},
-        {'selection': 'Within a month', 'score': 7},
-        {'selection': 'Within six months', 'score': 4},
-        {'selection': 'Not sure', 'score': 1},
+        'Within a week',
+        'Within a month',
+        'Within six months',
+        'Not sure',
       ],
     },
     {
-      'inputQuestion': 'What\'s your budget?',
+      'surveyQuestion': 'What\'s your budget?',
       'userPreference': [
         'D250,000',
         'D500,000',
@@ -86,15 +89,13 @@ class SurveyPage extends StatelessWidget {
     },
   ];
 
-  final String surveyQuestion;
-
-  SurveyPage({this.surveyQuestion});
+  void _surveyQuestion() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Project Details'),
+        title: Text(_title),
         backgroundColor: greenIsh,
       ),
       body: SafeArea(
@@ -123,21 +124,22 @@ class SurveyPage extends StatelessWidget {
                 ),
               ),
               Text(
-                _surveyList[2]['inputQuestion'],
+                _surveyList[0]['surveyQuestion'],
                 style: TextStyle(
                   fontFamily: 'NotoSans',
                   fontSize: 22.0,
                   color: grey,
                 ),
               ),
-              RaisedButton(
-                color: greenIsh,
-                textColor: white,
-                onPressed: () => print('Hey'),
-                child: Text(
-                  'Bijilo',
-                ),
-              )
+              // RaisedButton(
+              //   color: greenIsh,
+              //   textColor: white,
+              //   onPressed: () => print('Hey'),
+              //   child: Text(
+              //     'Bijilo',
+              //   ),
+              // )
+              UserSelection(),
             ],
           ),
         ),
@@ -145,3 +147,4 @@ class SurveyPage extends StatelessWidget {
     );
   }
 }
+
