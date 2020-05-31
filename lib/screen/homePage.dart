@@ -13,9 +13,9 @@ class HomePage extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Container(
-              height: double.infinity,
+              height: 400,
               width: double.infinity,
-              child: Image.asset('images/landing_kitchen.jpg', fit: BoxFit.cover),
+              child: Image.asset('images/interior_design.gif', fit: BoxFit.cover,), // This image was made by Guillaume Kurkdjian
             ),
             SafeArea(
               child: ListView(
@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
                         child: RichText(
                           text: TextSpan(
                             style: TextStyle(
-                              color: white,
+                              color: airbnbIsh,
                               fontSize: 40.0,
                               fontFamily: 'NotoSans',
                               fontWeight: FontWeight.bold,
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                                 text: '\nGet inspired.',
                               ),
                               TextSpan(
-                                text: '\nBuy products.',
+                                text: '\nFind properties.',
                               ),
                               TextSpan(
                                 text: '\nFind pros.',
@@ -51,16 +51,17 @@ class HomePage extends StatelessWidget {
                         child: Divider(
                           color: grey,
                         ),
-                        height: 5,
-                        width: 60.0,
+                        height: 30,
+                        width: 250.0,
                       ),
                       Text(
-                        'Sumakerr - A new way to design your home',
+                        '\nSumakerr - A new way to design your home\n',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: white,
+                          color: grey,
                           fontFamily: 'NotoSans',
                           fontSize: 16,
+                          fontStyle: FontStyle.italic,
                         ),
                       ),
                     ],
