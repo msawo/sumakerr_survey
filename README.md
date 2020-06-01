@@ -15,7 +15,7 @@ I've created so far.....
 
 ## What I have learned
 
-- Abstraction.
+- Abstraction, Encapsulation, Inheritance...
 
 
 
