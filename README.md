@@ -9,7 +9,8 @@ In this project, I want to build a survey application that asks users a series o
 
 I will create .....
 
-![Finished App](https://github.com/londonappbrewery/Images/blob/master/quizzler-demo.gif)
+![Finished App](https://github.com/msawo/sumakerr_survey/blob/master/images/simulator/sumakerr_survey_01.png)
+![Finished App](https://github.com/msawo/sumakerr_survey/blob/master/images/simulator/sumakerr_survey_03.png)
 
 ## What I have learned
 
@@ -17,4 +18,4 @@ I will create .....
 
 
 
->This is a companion project to The Sumakerr App. Check out the application at [www.msawo.com](https://www.msawo.com)
+>This is a companion project to The Sumakerr App. Demo will be available soon at [www.msawo.com](https://www.msawo.com)
