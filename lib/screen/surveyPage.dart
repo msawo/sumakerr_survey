@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/userSelection.dart';
+import '../widgets/survey.dart';
+import '../widgets/greeting.dart';
 import 'package:sumakerr_survey_app/common.dart';
 
-class SurveyPage extends StatelessWidget {
+class SurveyPage extends StatefulWidget {
   static const String _title = 'Project details:';
 
-  final int _questionIndex = 0;
+  @override
+  _SurveyPageState createState() => _SurveyPageState();
+}
+
+class _SurveyPageState extends State<SurveyPage> {
+  int _questionIndex = 0;
+
+  String _welcomeText = 'Hello there!';
+  String _welcomeMessage = 'Let\'s start with some basic info.\n';
+
   final _surveyList = [
     {
       'surveyQuestion': 'Please select a project location:',
@@ -89,13 +99,23 @@ class SurveyPage extends StatelessWidget {
     },
   ];
 
-  void _surveyQuestion() {}
+  void _surveyResponse() {
+    setState(() {
+      _questionIndex += 1;
+    });
+
+    if (_questionIndex < _surveyList.length) {
+      print('We have made a survey question');
+    } else {
+      print('No more questions');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_title),
+        title: Text(SurveyPage._title),
         backgroundColor: greenIsh,
       ),
       body: SafeArea(
@@ -106,40 +126,18 @@ class SurveyPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                'Hello there!',
-                style: TextStyle(
-                  fontFamily: 'NotoSans',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 30.0,
-                  color: black,
-                ),
+              _questionIndex < 1
+                  ? GreetingMessage(
+                      welcomeText: _welcomeText,
+                      welcomeMessage: _welcomeMessage,
+                    )
+                  : Container(),
+              // UserSelection(surveyAnswer: 'Brusubi', selectHandler: _surveyResponse,),
+              Survey(
+                questionIndex: _questionIndex,
+                surveyData: _surveyList,
+                surveyResponse: _surveyResponse,
               ),
-              Text(
-                'Let\'s start with some basic info.\n',
-                style: TextStyle(
-                  fontFamily: 'NotoSans',
-                  fontSize: 16.0,
-                  color: grey,
-                ),
-              ),
-              Text(
-                _surveyList[_questionIndex]['surveyQuestion'],
-                style: TextStyle(
-                  fontFamily: 'NotoSans',
-                  fontSize: 22.0,
-                  color: grey,
-                ),
-              ),
-              // RaisedButton(
-              //   color: greenIsh,
-              //   textColor: white,
-              //   onPressed: () => print('Hey'),
-              //   child: Text(
-              //     'Bijilo',
-              //   ),
-              // )
-              UserSelection(),
             ],
           ),
         ),
@@ -147,4 +145,3 @@ class SurveyPage extends StatelessWidget {
     );
   }
 }
-
