@@ -1,13 +1,13 @@
-# Sumakerr Survery ❓
+# Sumakerr Survey App
 
 ## My Goal
 
-In this project, I want to build a survey application that asks users a series of questions to help them find the right home professionals. 
+In this project, I want to build a survey application that asks users a series of questions to help them find the right home professionals in The Gambia. 
 
 
-## What you will create
+## What I'll create
 
-I I've created so far.....
+I've created so far.....
 
 ![Finished App](https://github.com/msawo/sumakerr_survey/blob/master/images/simulator/sumakerr_survey_01.png)
 ![Finished App](https://github.com/msawo/sumakerr_survey/blob/master/images/simulator/sumakerr_survey_03.png)
