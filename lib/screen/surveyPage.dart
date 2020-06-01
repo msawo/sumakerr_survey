@@ -6,7 +6,7 @@ import 'package:sumakerr_survey_app/common.dart';
 class SurveyPage extends StatelessWidget {
   static const String _title = 'Project details:';
 
-  final int _index = 0;
+  final int _questionIndex = 0;
   final _surveyList = [
     {
       'surveyQuestion': 'Please select a project location:',
@@ -124,7 +124,7 @@ class SurveyPage extends StatelessWidget {
                 ),
               ),
               Text(
-                _surveyList[0]['surveyQuestion'],
+                _surveyList[_questionIndex]['surveyQuestion'],
                 style: TextStyle(
                   fontFamily: 'NotoSans',
                   fontSize: 22.0,
