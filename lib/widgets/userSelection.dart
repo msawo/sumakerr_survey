@@ -1,89 +1,94 @@
 import 'package:flutter/material.dart';
+
 import 'package:sumakerr_survey_app/common.dart';
 
-enum SelectedChoice {
-  Bijilo,
-  Sukuta,
-  Brufut,
-  Brusubi,
-  Salagi,
+class LabeledRadio extends StatelessWidget {
+  final String label;
+  final EdgeInsets padding;
+  final bool groupValue;
+  final bool value;
+  final Function onChanged;
+
+  LabeledRadio({
+    this.label,
+    this.padding,
+    this.groupValue,
+    this.value,
+    this.onChanged,
+    
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        if (value != groupValue) onChanged(value); //TODO: Update value to the correct question index
+      },
+      child: Padding(
+        padding: padding,
+        child: Row(
+          children: <Widget>[
+            Radio<bool>(
+              groupValue: groupValue,
+              value: value,
+              onChanged: (bool newValue) {
+                onChanged(newValue);
+              },
+            ),
+            Text(
+              label,
+              style: TextStyle(
+                color: grey,
+                fontSize: 19,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class UserSelection extends StatefulWidget {
-  UserSelection({Key key}) : super(key: key);
+  final String surveyAnswer;
+  final Function selectHandler;
 
+  UserSelection({
+    Key key,
+    @required this.surveyAnswer,
+    @required this.selectHandler,
+  }) : super(key: key);
   @override
-  _UserSelectionState createState() => _UserSelectionState();
+  _UserSelectionState createState() =>
+      _UserSelectionState(surveyAnswer, selectHandler);
 }
 
 class _UserSelectionState extends State<UserSelection> {
-  SelectedChoice _item = SelectedChoice.Bijilo;
+  bool _isRadioSelected = false;
+
+  final String surveyAnswer;
+  final Function selectHandler;
+
+  _UserSelectionState(this.surveyAnswer, this.selectHandler);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          ListTile(
-            contentPadding: EdgeInsets.fromLTRB(0, 2.0, 0, 2.0),
-            title: Text(
-              'Bijilo',
-              style: TextStyle(
-                fontSize: 19,
-                fontFamily: 'NotoSans',
-                color: grey,
-              ),
-            ),
-            leading: Radio(
-              value: SelectedChoice.Bijilo,
-              groupValue: _item,
-              onChanged: (SelectedChoice value) {
-                setState(() {
-                  _item = value;
-                });
-              },
-            ),
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.fromLTRB(0, 2.0, 0, 2.0),
-            title: Text(
-              'Sukuta',
-              style: TextStyle(
-                fontSize: 19,
-                fontFamily: 'NotoSans',
-                color: grey,
-              ),
-            ),
-            leading: Radio(
-              value: SelectedChoice.Sukuta,
-              groupValue: _item,
-              onChanged: (SelectedChoice value) {
-                setState(() {
-                  _item = value;
-                });
-              },
-            ),
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.fromLTRB(0, 2.0, 0, 2.0),
-            title: Text(
-              'Brufut',
-              style: TextStyle(
-                fontSize: 19,
-                fontFamily: 'NotoSans',
-                color: grey,
-              ),
-            ),
-            leading: Radio(
-              value: SelectedChoice.Brufut,
-              groupValue: _item,
-              onChanged: (SelectedChoice value) {
-                setState(() {
-                  _item = value;
-                });
-              },
-            ),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <LabeledRadio>[
+          LabeledRadio(
+            label: surveyAnswer,
+            padding: EdgeInsets.fromLTRB(0, 5.0, 5.0, 2.0),
+            value: true,
+            groupValue: _isRadioSelected,
+            onChanged: (bool newValue) {
+              setState(() {
+                selectHandler();
+                _isRadioSelected = newValue;
+              });
+            },
           ),
         ],
       ),
