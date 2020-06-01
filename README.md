@@ -10,6 +10,7 @@ In this project, I want to build a survey application that asks users a series o
 I've created so far.....
 
 ![Finished App](https://github.com/msawo/sumakerr_survey/blob/master/images/simulator/sumakerr_survey_01.png)
+![Finished App](https://github.com/msawo/sumakerr_survey/blob/master/images/simulator/sumakerr_survey_02.png)
 ![Finished App](https://github.com/msawo/sumakerr_survey/blob/master/images/simulator/sumakerr_survey_03.png)
 
 ## What I have learned
