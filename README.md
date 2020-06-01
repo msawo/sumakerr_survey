@@ -7,7 +7,7 @@ In this project, I want to build a survey application that asks users a series o
 
 ## What you will create
 
-I will create .....
+I I've created so far.....
 
 ![Finished App](https://github.com/msawo/sumakerr_survey/blob/master/images/simulator/sumakerr_survey_01.png)
 ![Finished App](https://github.com/msawo/sumakerr_survey/blob/master/images/simulator/sumakerr_survey_03.png)
