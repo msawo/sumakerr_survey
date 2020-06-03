@@ -27,6 +27,7 @@ class LabeledRadio extends StatelessWidget {
       child: Padding(
         padding: padding,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Radio<bool>(
               groupValue: groupValue,
@@ -76,11 +77,12 @@ class _UserSelectionState extends State<UserSelection> {
     return Container(
       width: double.infinity,
       child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <LabeledRadio>[
           LabeledRadio(
             label: surveyAnswer,
-            padding: EdgeInsets.fromLTRB(0, 5.0, 5.0, 2.0),
+            padding: EdgeInsets.fromLTRB(0, 5.0, 2.0, 2.0),
             value: true,
             groupValue: _isRadioSelected,
             onChanged: (bool newValue) {
