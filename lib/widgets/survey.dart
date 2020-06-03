@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './surveyQuestion.dart';
-import './userSelection.dart';
+import './surveyAnswer.dart';
 
 class Survey extends StatelessWidget {
   final List<Map<String, Object>> surveyData;
@@ -18,10 +18,12 @@ class Survey extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SurveyQuestion(surveyQuestion: surveyData[questionIndex]['surveyQuestion'],),
           ...(surveyData[questionIndex]['userPreference'] as List<String>).map((userSelection) {
-            return UserSelection(selectHandler: surveyResponse, surveyAnswer: userSelection,);
+            return SurveyAnswer(selectHandler: surveyResponse, surveyAnswer: userSelection,); 
+            //TODO: Later swtich SurveyAnswer widget here with UserSelection widget for Radio btn selection
           }).toList()
         ],
       ),
