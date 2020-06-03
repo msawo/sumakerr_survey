@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/survey.dart';
+import '../widgets/surveyAnswer.dart';
+import '../widgets/resetSurvey.dart';
 import '../widgets/greeting.dart';
 import 'package:sumakerr_survey_app/common.dart';
 
@@ -22,8 +24,10 @@ class _SurveyPageState extends State<SurveyPage> {
       'surveyQuestion': 'Please select a project location:',
       'userPreference': [
         'Brusubi',
-        'Kololi',
         'Brufut',
+        'Kololi',
+        'Salagi',
+        'Sanyang',
       ],
     },
     {
@@ -111,6 +115,12 @@ class _SurveyPageState extends State<SurveyPage> {
     }
   }
 
+  void _resetSurvey() {
+    setState(() {
+      _questionIndex = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,11 +143,13 @@ class _SurveyPageState extends State<SurveyPage> {
                     )
                   : Container(),
               // UserSelection(surveyAnswer: 'Brusubi', selectHandler: _surveyResponse,),
-              Survey(
-                questionIndex: _questionIndex,
-                surveyData: _surveyList,
-                surveyResponse: _surveyResponse,
-              ),
+              _questionIndex < _surveyList.length
+                  ? Survey(
+                      questionIndex: _questionIndex,
+                      surveyData: _surveyList,
+                      surveyResponse: _surveyResponse,
+                    )
+                  : ResetSurvey(resetHandler: _resetSurvey,),
             ],
           ),
         ),
