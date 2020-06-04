@@ -21,8 +21,8 @@ class Survey extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SurveyQuestion(surveyQuestion: surveyData[questionIndex]['surveyQuestion'],),
-          ...(surveyData[questionIndex]['userPreference'] as List<String>).map((userSelection) {
-            return SurveyAnswer(selectHandler: surveyResponse, surveyAnswer: userSelection,); 
+          ...(surveyData[questionIndex]['userPreference'] as List<Map<String, Object>>).map((userSelection) {
+            return SurveyAnswer(selectHandler: () => surveyResponse(userSelection['score']), surveyAnswer: userSelection['selection'],); 
             //TODO: Later swtich SurveyAnswer widget here with UserSelection widget for Radio btn selection
           }).toList()
         ],
