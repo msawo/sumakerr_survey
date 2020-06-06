@@ -117,6 +117,8 @@ class _SurveyPageState extends State<SurveyPage> {
       _questionIndex += 1;
     });
 
+    print(_surveyList[_questionIndex]);
+
     if (_questionIndex < _surveyList.length) {
       print('We have made a survey question');
     } else {
